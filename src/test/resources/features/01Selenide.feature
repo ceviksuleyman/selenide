@@ -1,4 +1,4 @@
-@google
+@amazon
 Feature: Selenide Demo
 
   Scenario: navigation's test
