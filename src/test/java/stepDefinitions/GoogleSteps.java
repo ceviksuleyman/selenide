@@ -1,5 +1,6 @@
 package stepDefinitions;
 
+import com.codeborne.selenide.Configuration;
 import io.cucumber.java.en.Given;
 import org.openqa.selenium.By;
 
@@ -10,14 +11,22 @@ public class GoogleSteps {
     // $(".loading_progress").should(disappear); // Waits until element disappears
     // $("#username").shouldHave(text("Hello, Johny!")); // Waits until element gets text
 
-    @Given("I navigate to {string}")
-    public void ıNavigateTo(String url) {
+    @Given("navigate to {string}")
+    public void navigateTo(String url) {
 
-        open(url);
+
+        Configuration.browser = "chrome";
+        Configuration.baseUrl = url;
+        // Configuration.screenshots = true;
+        // Configuration.browserSize = "1680x1050";
+        open("/");
         sleep(5000);
 
         $(By.cssSelector("input[title='Ara']")).setValue("Youtube");
+        $(By.name("btnK")).click();
 
-        $(By.cssSelector("center>input.gNO89b[name='btnK']")).click();
+        //$(By.cssSelector("center>input.gNO89b[name='btnK']")).click();
+
+        closeWebDriver();
     }
 }
