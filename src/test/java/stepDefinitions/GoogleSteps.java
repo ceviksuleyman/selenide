@@ -17,15 +17,15 @@ public class GoogleSteps {
 
         Configuration.browser = "chrome";
         Configuration.baseUrl = url;
+        Configuration.browserPosition = "0x0";
         // Configuration.screenshots = true;
         // Configuration.browserSize = "1680x1050";
         open("/");
         sleep(5000);
 
-        $(By.cssSelector("input[title='Ara']")).setValue("Youtube");
-        $(By.name("btnK")).click();
+        $(By.id("twotabsearchtextbox")).setValue("MSI Laptop");
+        $(By.id("nav-search-submit-button")).click();
 
-        //$(By.cssSelector("center>input.gNO89b[name='btnK']")).click();
 
         closeWebDriver();
     }
