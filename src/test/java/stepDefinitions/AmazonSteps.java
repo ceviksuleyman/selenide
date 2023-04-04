@@ -1,7 +1,7 @@
 package stepDefinitions;
 
 import io.cucumber.java.en.Given;
-import utility.Driver;
+import utilities.Driver;
 
 
 public class AmazonSteps {
