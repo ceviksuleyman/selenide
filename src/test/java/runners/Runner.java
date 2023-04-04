@@ -16,7 +16,7 @@ import org.junit.runner.RunWith;
         features = "./src/test/resources/features",
         glue = {"stepDefinitions"},
         dryRun = false,
-        tags = "@amazon"
+        tags = "@driver"
 
 )
 public class Runner {
