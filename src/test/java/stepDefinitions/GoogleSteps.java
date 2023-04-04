@@ -24,6 +24,7 @@ public class GoogleSteps {
         Configuration.baseUrl = url;
         Configuration.browserSize = "1440x800";
         Configuration.browserPosition = "10x10"; //default
+        Configuration.timeout = 30000;
 
 
         open("/");
@@ -34,16 +35,10 @@ public class GoogleSteps {
 
         $(By.id("twotabsearchtextbox")).setValue("MSI Laptop");
 
-        refresh();
-
         $(By.id("twotabsearchtextbox")).shouldHave(visible);
 
         $(By.id("nav-search-submit-button")).click();
 
-        back();
-
-        forward();
-
-        closeWebDriver();
+        refresh();
     }
 }
