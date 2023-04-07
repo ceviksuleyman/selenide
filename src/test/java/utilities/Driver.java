@@ -16,6 +16,7 @@ public abstract class Driver {
         Configuration.baseUrl = url;
         Configuration.browserPosition = "0x0";
         Configuration.browserSize = "1540x800";
+        Configuration.holdBrowserOpen = true;
 
         open("/");
     }
