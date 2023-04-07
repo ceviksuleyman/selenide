@@ -39,10 +39,12 @@ public class TestPageStepDefinitions {
             testPage.checkbox1.shouldNot(Condition.checked);
             testPage.checkbox1.click();
             testPage.checkbox1.shouldBe(Condition.checked);
+
         } else if (string.equals("Checkbox 2") && !testPage.checkbox2.isSelected()) {
             testPage.checkbox2.shouldNot(Condition.checked);
             testPage.checkbox2.click();
             testPage.checkbox2.shouldBe(Condition.checked);
+
         } else if (string.equals("Red") && !testPage.red.isSelected()) {
             testPage.red.shouldNot(Condition.checked);
             testPage.red.click();
