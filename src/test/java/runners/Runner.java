@@ -16,7 +16,7 @@ import org.junit.runner.RunWith;
         features = "./src/test/resources/features",
         glue = {"stepDefinitions"},
         dryRun = false,
-        tags = "@iframe"
+        tags = "@screenshot_page"
 )
 public class Runner {
 }

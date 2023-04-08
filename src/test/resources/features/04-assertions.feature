@@ -3,6 +3,7 @@ Feature: assertions2
 
   Scenario: TC01_search for tesla
     Given I navigate to "https://www.google.com"
+    #    LOCATE THE ACCEPT ALL
     When I search for "Tesla"
     Then verify page source contains "Tesla"
     Then verify the result should contain "Yaklaşık" keyword

@@ -42,4 +42,15 @@ public class TestPage {
     //    FRAMES
     public SelenideElement pageHader = $(By.xpath("//h3"));
     public SelenideElement backToTechpro = $(By.xpath("//a[@type='button']"));
+
+    //    ACTIONS
+    public SelenideElement source = $(By.id("draggable"));
+    public SelenideElement target = $(By.id("droppable"));
+
+    //    EXPLICIT WAIT
+    public SelenideElement startButton = $(By.xpath("//div[@id='start']//button"));
+    public SelenideElement helloWorld = $(By.xpath("//div[@id='finish']//h4"));
+
+    //    SCREENSHOT
+    public SelenideElement upcomingPrograms = $(By.id("MjI4NDoxMDk1-1"));
 }

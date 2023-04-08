@@ -1,16 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="Cucumber" time="59.788" tests="1" skipped="0" failures="0" errors="0">
-<testcase classname="iframe" name="TC01_frame" time="59.63">
+<testsuite name="Cucumber" time="26.728" tests="1" skipped="0" failures="0" errors="0">
+<testcase classname="screenshots" name="entire page" time="26.571">
 <system-out><![CDATA[
-Given I navigate to "https://testcenter.techproeducation.com/index.php?page=iframe".passed
-And I verify the page header contains "iframe"..............................passed
-And I switch to the frame 1.................................................passed
-And I click on Back to TechProEducation.com.................................passed
-When I switch to window 2...................................................passed
-And I wait for 5 seconds....................................................passed
-Then I get the URL of the page and verify it contains "techproeducation"....passed
-When I switch to window 1...................................................passed
-And I hold the browser open.................................................passed
+Given I navigate to "https://www.techproeducation.com"......................passed
+And I capture the screenshot of the page....................................passed
 ]]></system-out>
 </testcase>
 </testsuite>
