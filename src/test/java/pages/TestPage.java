@@ -2,6 +2,7 @@ package pages;
 
 import com.codeborne.selenide.ElementsCollection;
 import com.codeborne.selenide.SelenideElement;
+import io.cucumber.java.eo.Se;
 import org.openqa.selenium.By;
 
 import static com.codeborne.selenide.Selenide.$;
@@ -53,4 +54,10 @@ public class TestPage {
 
     //    SCREENSHOT
     public SelenideElement upcomingPrograms = $(By.id("MjI4NDoxMDk1-1"));
+    public SelenideElement upcomingPrograms2 = $(By.xpath("//*[@id='MjI4NDoxMDk1-1']"));
+
+    //
+
+    public SelenideElement closePopup = $(By.cssSelector("a>i.eicon-close"));
+    public SelenideElement menuBar = $(By.cssSelector("div[data-id='0244737']"));
 }

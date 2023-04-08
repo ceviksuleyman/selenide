@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="Cucumber" time="26.728" tests="1" skipped="0" failures="0" errors="0">
-<testcase classname="screenshots" name="entire page" time="26.571">
+<testsuite name="Cucumber" time="18.409" tests="1" skipped="0" failures="0" errors="0">
+<testcase classname="screenshots" name="element screenshot" time="18.286">
 <system-out><![CDATA[
 Given I navigate to "https://www.techproeducation.com"......................passed
-And I capture the screenshot of the page....................................passed
+And I capture the screenshot of the programs pop up.........................passed
 ]]></system-out>
 </testcase>
 </testsuite>

@@ -4,8 +4,7 @@ import com.codeborne.selenide.Configuration;
 
 import java.time.Duration;
 
-import static com.codeborne.selenide.Selenide.open;
-import static com.codeborne.selenide.Selenide.webdriver;
+import static com.codeborne.selenide.Selenide.*;
 
 public abstract class Driver {
 
@@ -21,5 +20,10 @@ public abstract class Driver {
         open("/");
         webdriver().driver().getWebDriver().manage().window().maximize();
         webdriver().driver().getWebDriver().manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
+    }
+
+    public static void waitFor(int sn){
+
+        sleep(sn*1000);
     }
 }

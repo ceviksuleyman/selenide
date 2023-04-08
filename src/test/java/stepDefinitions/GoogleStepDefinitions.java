@@ -7,6 +7,7 @@ import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.junit.Assert;
 import pages.GooglePage;
+import utilities.Driver;
 
 import java.time.Duration;
 
@@ -25,7 +26,7 @@ public class GoogleStepDefinitions {
         webdriver().driver().getWebDriver().manage().window().maximize();
         webdriver().driver().getWebDriver().manage().timeouts().implicitlyWait(Duration.ofSeconds(15));
 
-        sleep(10000); //10 second
+        Driver.waitFor(3);
     }
 
     @Given("I wait for {int} seconds")

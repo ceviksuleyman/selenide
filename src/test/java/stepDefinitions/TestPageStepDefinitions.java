@@ -161,24 +161,24 @@ public class TestPageStepDefinitions {
     //    ACTIONS
     @When("I drag the source in the target")
     public void i_drag_the_source_in_the_target() {
-        //        actions()
-        //                .dragAndDrop(testPage.source, testPage.target)//moving source to target
-        //                .build()//
-        //                .perform();//required to execute the commands
+
+        /*actions()
+                .dragAndDrop(testPage.source, testPage.target)//moving source to target
+                .build()
+                .perform();//required to execute the commands*/
 
         //        OR
-
-        //        actions()
-        //                .clickAndHold(testPage.source)
-        //                .moveToElement(testPage.target)
-        //                .build()
-        //                .perform();
-
-        //        OR we can move teh source to the specific coordinates
         actions()
-                .dragAndDropBy(testPage.source, 305, 167)
+                .clickAndHold(testPage.source)
+                .moveToElement(testPage.target)
                 .build()
                 .perform();
+
+        //        OR we can move teh source to the specific coordinates
+        /*actions()
+                .dragAndDropBy(testPage.source, 305, 167)
+                .build()
+                .perform();*/
 
     }
 

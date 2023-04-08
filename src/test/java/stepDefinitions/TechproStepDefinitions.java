@@ -4,6 +4,7 @@ import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import org.junit.Assert;
 import pages.TestPage;
+import utilities.Driver;
 
 import static com.codeborne.selenide.Selenide.closeWebDriver;
 import static com.codeborne.selenide.Selenide.title;
@@ -26,12 +27,14 @@ public class TechproStepDefinitions {
     //    Screenshot of programs elements
     @Given("I capture the screenshot of the programs pop up")
     public void i_capture_the_screenshot_of_the_programs_pop_up() {
+
+        testPage.closePopup.click();
+        Driver.waitFor(3);
         try {
-            testPage.upcomingPrograms.screenshot();
+            testPage.menuBar.screenshot();
         } catch (Exception e) {
 
         }
-
     }
 
     @And("Close browser")
