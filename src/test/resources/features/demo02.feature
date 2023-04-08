@@ -1,4 +1,4 @@
-@driver
+@demo2
 Feature: Selenide Demo
 
   Scenario: navigation's test

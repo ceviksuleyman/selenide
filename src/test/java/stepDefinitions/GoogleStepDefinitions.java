@@ -8,6 +8,8 @@ import io.cucumber.java.en.When;
 import org.junit.Assert;
 import pages.GooglePage;
 
+import java.time.Duration;
+
 import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Condition.visible;
 import static com.codeborne.selenide.Selenide.*;
@@ -20,6 +22,9 @@ public class GoogleStepDefinitions {
     public void i_navigate_to(String string) {
         //        open("https://www.google.com");
         open(string);// going to URL
+        webdriver().driver().getWebDriver().manage().window().maximize();
+        webdriver().driver().getWebDriver().manage().timeouts().implicitlyWait(Duration.ofSeconds(15));
+
         sleep(10000); //10 second
     }
 

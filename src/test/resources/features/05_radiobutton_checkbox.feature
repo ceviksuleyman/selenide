@@ -21,3 +21,4 @@ Feature: radio button and checkbox
     Given I navigate to "https://testcenter.techproeducation.com/index.php?page=radio-buttons"
     And I click on "Football" if not already selected
     Then I hold the browser open
+    And Close browser

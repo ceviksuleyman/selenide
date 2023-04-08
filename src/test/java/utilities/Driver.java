@@ -2,7 +2,10 @@ package utilities;
 
 import com.codeborne.selenide.Configuration;
 
+import java.time.Duration;
+
 import static com.codeborne.selenide.Selenide.open;
+import static com.codeborne.selenide.Selenide.webdriver;
 
 public abstract class Driver {
 
@@ -12,12 +15,11 @@ public abstract class Driver {
     public static void getDriver(String url) {
 
         Configuration.browser = "chrome";
-        Configuration.timeout = 20000;
         Configuration.baseUrl = url;
-        Configuration.browserPosition = "0x0";
-        Configuration.browserSize = "1540x800";
         Configuration.holdBrowserOpen = true;
 
         open("/");
+        webdriver().driver().getWebDriver().manage().window().maximize();
+        webdriver().driver().getWebDriver().manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
     }
 }

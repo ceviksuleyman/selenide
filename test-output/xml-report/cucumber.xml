@@ -1,12 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="Cucumber" time="30.751" tests="1" skipped="0" failures="0" errors="0">
-<testcase classname="assertions2" name="TC01_search for tesla" time="30.615">
+<testsuite name="Cucumber" time="52.839" tests="1" skipped="0" failures="0" errors="0">
+<testcase classname="Selenide Demo" name="navigation's test" time="52.633">
 <system-out><![CDATA[
-Given I navigate to "https://www.google.com"................................passed
-When I search for "Tesla"...................................................passed
-Then verify page source contains "Tesla"....................................passed
-Then verify the result should contain "Yaklaşık" keyword....................passed
-Then the first result in the page sections should contain "Tesla"...........passed
+Given navigate to "https://www.google.com"..................................passed
+When new tab navigate to "https://www.youtube.com/".........................passed
 ]]></system-out>
 </testcase>
 </testsuite>

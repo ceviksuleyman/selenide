@@ -8,6 +8,8 @@ import io.cucumber.java.en.Given;
 import org.openqa.selenium.By;
 import pages.AmazonPage;
 
+import java.time.Duration;
+
 import static com.codeborne.selenide.Condition.*;
 import static com.codeborne.selenide.Selenide.*;
 
@@ -19,26 +21,21 @@ public class GoogleSteps {
     @Given("navigate to {string}")
     public void navigateTo(String url) {
 
-
         Configuration.browser = "chrome";
         Configuration.baseUrl = url;
-        Configuration.browserSize = "1440x800";
-        Configuration.browserPosition = "10x10"; //default
-        Configuration.timeout = 30000;
-
+        /*Configuration.browserSize = "1440x800";
+        Configuration.browserPosition = "10x10"; //default*/
 
         open("/");
-        sleep(5000);
+        webdriver().driver().getWebDriver().manage().window().maximize();
+        webdriver().driver().getWebDriver().manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
 
-        AmazonPage amazonPage = new AmazonPage();
-        //amazonPage.searchBox.setValue("MSI Laptop").;
-
-        $(By.id("twotabsearchtextbox")).setValue("MSI Laptop");
-
-        $(By.id("twotabsearchtextbox")).shouldHave(visible);
-
-        $(By.id("nav-search-submit-button")).click();
-
-        refresh();
+        $("[name='q']").shouldBe(empty);// TextBox'ın bos oldugunu dogrular
+        $("[name='q']").val("Selenide").pressEnter();// TextBox'ta selenide aratıp enter'a basar
+        $("#search").shouldHave(text("selenide.org"));//arama sonucunda selenide.org yazisinin oldugunu test eder
+        System.out.println($("[name='q']").isEnabled());
+        $("[name='q']").shouldNotBe(empty);// Bos olmadigini dogrular
+        $("[name='q']").shouldBe(enabled);// Etkin olmasi gerektigini dogrular
+        $("[name='q']").shouldBe(visible);// Gorunur olmasi gerektigini dogrular
     }
 }
