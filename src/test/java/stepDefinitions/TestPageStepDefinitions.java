@@ -3,13 +3,16 @@ package stepDefinitions;
 import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.SelenideElement;
 import com.codeborne.selenide.WebDriverRunner;
+import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.junit.Assert;
+import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import pages.TestPage;
 
+import java.io.File;
 import java.time.Duration;
 
 import static com.codeborne.selenide.Selenide.*;
@@ -221,5 +224,24 @@ public class TestPageStepDefinitions {
         testPage.helloWorld.should(Condition.visible, Duration.ofSeconds(25));
         Assert.assertEquals("Hello World!", testPage.helloWorld.getText());
         // testPage.helloWorld.should(Condition.text("fake test"));//FAIL
+    }
+
+    @And("I try to upload the file on this path {string}")
+    public void iTryToUploadTheFileOnThisPath(String arg0) {
+        //        Getting the file path
+        //                    USER DIRECTORY               + FILE PATH = FULL PATH
+        System.out.println(System.getProperty("user.home"));
+        String path = System.getProperty("user.home") + arg0;
+        System.out.println(path);
+        File fullPath = new File(path);
+        //        Selecting the file
+        $(By.id("file-upload")).uploadFile(fullPath);
+        //        click upload button
+        $(By.id("file-submit")).click();
+    }
+
+    @Then("I verify the file is uploaded")
+    public void iVerifyTheFileIsUploaded() {
+        $(By.xpath("//h3")).shouldHave(Condition.text("File Uploaded!"));
     }
 }
