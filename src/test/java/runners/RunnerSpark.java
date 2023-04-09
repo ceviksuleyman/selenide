@@ -16,8 +16,11 @@ import org.junit.runner.RunWith;
         },
         features = "./src/test/resources/features",
         glue = {"stepDefinitions"},
-        dryRun = false,
-        tags = "@file_upload"
+
+        tags = "@file_upload",
+
+        dryRun = false
+
 )
 public class RunnerSpark {
 
