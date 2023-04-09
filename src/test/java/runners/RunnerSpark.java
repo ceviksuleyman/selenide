@@ -11,12 +11,14 @@ import org.junit.runner.RunWith;
                 "html:target/default-cucumber-reports.html",
                 "json:target/json-reports/cucumber.json",
                 "junit:target/xml-report/cucumber.xml",
+                "rerun:target/failed_scenarios.txt",
+                "com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:"
         },
-        publish = true,
         features = "./src/test/resources/features",
         glue = {"stepDefinitions"},
         dryRun = false,
         tags = "@file_upload"
 )
-public class Runner {
+public class RunnerSpark {
+
 }
